@@ -1,6 +1,9 @@
 const openAddPopup = document.getElementById("open-add-popup"); /* open add task pop-up */
 const taskList = document.getElementById("task-list"); /* get whole-list */
+const openDeleteAllPopup = document.getElementById("delete-all"); /*clears task list */
 const addTaskButton = document.createElement("button");
+const YdeleteAll = document.createElement("button");
+const NdeleteAll = document.createElement("button");
 const textInput = document.createElement("input");
 const linkInput = document.createElement("input");
 const checkboxInput = document.createElement("input");
@@ -139,5 +142,67 @@ function createContentElement(taskName, link){
     }
 }
 
+openDeleteAllPopup.addEventListener("click", function(){
+/* this button will delete all existing tasks */
+/* let's open a pop-up which will confirm w the user */
+
+    const delPopupContent = createYesNoPopup();
+    console.log("the button was clicked and pop-up created.")
+
+     // Add the popup content to the overlay and display it
+     popupOverlay.innerHTML = "";
+     popupOverlay.appendChild(delPopupContent);
+     document.body.appendChild(popupOverlay);
+     popupOverlay.style.display = "flex";
+
+    console.log("What is the pop-up content?",delPopupContent);
+
+    /*The Yes button is clicked */
+    YdeleteAll.addEventListener("click", function(){
+    
+        /*clear the task list */
+         // Remove all child nodes (list items) from the task list
+        while (taskList.firstChild) {
+        taskList.removeChild(taskList.firstChild);
+        }
+
+        /*then close the pop-up */
+        popupOverlay.style.display = "none";
+
+    });
+     /*The No button is clicked */
+    NdeleteAll.addEventListener("click", function(){
+        
+        /*simply close the pop-up */
+        popupOverlay.style.display = "none";
+    }); 
+});
+
+function createYesNoPopup(){
+
+    const delPopupContent = document.createElement("div");
+    delPopupContent.classList.add("popup-content");
+
+    /* Add a question and two buttons yes / no */
+
+    const question = "hey, are you sure you want to delete all tasks?";
+
+    const questionLabel = document.createElement("label");
+    questionLabel.textContent = question;
+    questionLabel.id = "question-label";
+
+    /*create yes no buttons*/
+    // created above
+    YdeleteAll.textContent = "Yes";
+    NdeleteAll.textContent = "Nope!";
+    YdeleteAll.classList.add("button-container");
+    NdeleteAll.classList.add("button-container");
+
+    delPopupContent.appendChild(questionLabel);
+    delPopupContent.appendChild(YdeleteAll);
+    delPopupContent.appendChild(NdeleteAll);
+
+    return delPopupContent;
+}
 
 
