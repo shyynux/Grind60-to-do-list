@@ -38,6 +38,19 @@ input[type="checkbox"]:checked {
     cursor: pointer;
     margin-left: 10px;
     vertical-align: middle;
+    background-image: url('graphics/edit-icon.png'); /* Replace with the correct path to your image */
+    background-size: contain; /* Adjust this as needed to fit your image */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px; /* Adjust the width and height to fit your image size */
+    height: 30px;
+    border: none; /* Remove default button styling */
+    cursor: pointer; /* Show pointer cursor on hover */
+    padding: 2%;
+}
+
+.edit-button {
+    cursor: pointer;
 }
 
 .button-container{

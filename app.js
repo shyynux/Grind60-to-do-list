@@ -61,6 +61,25 @@ openAddPopup.addEventListener("click", function () {
         editIcon.alt = "Edit";
         editIcon.classList.add("edit-icon");
 
+        //test
+        const editButton = document.createElement('button');
+        editButton.classList.add('edit-icon');
+
+        // const editImage = document.createElement('img');
+        // editImage.src = 'graphics/edit-icon.png'; 
+        // editImage.alt = 'Edit';
+        // editIcon.classList.add("edit-icon");
+        
+        // editButton.appendChild(editImage);
+        // editButton.classList.add('edit-button');
+
+        editButton.addEventListener('click', function() {
+            // Implement your edit logic here, using taskItem to refer to the task being edited
+            console.log('Edit button clicked');
+        });
+
+        /* --- */
+
         /* create delete button */
         const deleteIcon = document.createElement("img");
         deleteIcon.src = "graphics/delete-icon.png";
@@ -76,7 +95,7 @@ openAddPopup.addEventListener("click", function () {
          /* now we append all things to the list */
          listItem.append(checkbox);
          listItem.append(contentElement);
-         listItem.append(editIcon);
+         listItem.append(editButton);
          listItem.append(deleteIcon);
  
          console.log("LIST ITEM -- ", listItem);
@@ -205,4 +224,8 @@ function createYesNoPopup(){
     return delPopupContent;
 }
 
+/* edit button for a single task */
+
+/* delete button for a single task */
+const deleteButton = document.getElementById("");
 
