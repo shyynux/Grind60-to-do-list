@@ -75,6 +75,7 @@ openAddPopup.addEventListener("click", function () {
 
         editButton.addEventListener('click', function() {
             // Implement your edit logic here, using taskItem to refer to the task being edited
+
             console.log('Edit button clicked');
         });
 

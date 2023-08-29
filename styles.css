@@ -103,3 +103,11 @@ header{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-family: 'Hanken Grotesk Thin', sans-serif;
 }
+
+.logout-Bar{
+    text-align: right;
+    font-size: 1em;
+    font-family: "Hanken Grotesk", sans-serif; /* Use custom font */
+    padding: 20px;
+    background-color: #fffff7;
+}
